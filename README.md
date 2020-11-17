@@ -8,6 +8,8 @@ A convenient tool to make pretty-formatted, colorful output in C++ console appli
  * Supports utf-8 characters, up to 4 bytes.
  * 12 examlpes showing all features included in `main.cpp`
 
+![screenshot](/Screenshot.png)
+
 ```
 static const unsigned char clInherit = 255;
 static const unsigned char clDefault = 0;
