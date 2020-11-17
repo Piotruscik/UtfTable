@@ -149,7 +149,7 @@ class UtfTable {
     return this;
   }
 
-  UtfTable* setColors(__Line dst, const char* chars, const char* colors, char bg) {
+  UtfTable* setColors(__Line dst, const char* chars, const unsigned char* colors, char bg) {
     int len = strlen(chars);
     for (int i = 0; i < len; i++)
       if (chars[i] >= '0' && chars[i] <= '9')
@@ -359,16 +359,16 @@ class UtfTable {
     return this->bgColor(this->currCol, color);
   }
 
-  UtfTable* setTopColors   (const char* c, const char* colors) { return this->setColors(this->top,  c, colors, 0); }
-  UtfTable* setLineColors  (const char* c, const char* colors) { return this->setColors(this->none, c, colors, 0); }
-  UtfTable* setSepColors   (const char* c, const char* colors) { return this->setColors(this->sep,  c, colors, 0); }
-  UtfTable* setDownColors  (const char* c, const char* colors) { return this->setColors(this->down, c, colors, 0); }
-  UtfTable* setTopBgColors (const char* c, const char* colors) { return this->setColors(this->top,  c, colors, 1); }
-  UtfTable* setLineBgColors(const char* c, const char* colors) { return this->setColors(this->none, c, colors, 1); }
-  UtfTable* setSepBgColors (const char* c, const char* colors) { return this->setColors(this->sep,  c, colors, 1); }
-  UtfTable* setDownBgColors(const char* c, const char* colors) { return this->setColors(this->down, c, colors, 1); }
+  UtfTable* setTopColors   (const char* c, const unsigned char* colors) { return this->setColors(this->top,  c, colors, 0); }
+  UtfTable* setLineColors  (const char* c, const unsigned char* colors) { return this->setColors(this->none, c, colors, 0); }
+  UtfTable* setSepColors   (const char* c, const unsigned char* colors) { return this->setColors(this->sep,  c, colors, 0); }
+  UtfTable* setDownColors  (const char* c, const unsigned char* colors) { return this->setColors(this->down, c, colors, 0); }
+  UtfTable* setTopBgColors (const char* c, const unsigned char* colors) { return this->setColors(this->top,  c, colors, 1); }
+  UtfTable* setLineBgColors(const char* c, const unsigned char* colors) { return this->setColors(this->none, c, colors, 1); }
+  UtfTable* setSepBgColors (const char* c, const unsigned char* colors) { return this->setColors(this->sep,  c, colors, 1); }
+  UtfTable* setDownBgColors(const char* c, const unsigned char* colors) { return this->setColors(this->down, c, colors, 1); }
 
-  char rgb(unsigned char r, unsigned char g, unsigned char b) {
+  unsigned char rgb(unsigned char r, unsigned char g, unsigned char b) {
     for (int i = 9; i < this->colorCnt; i++) {
       __Color c = this->colors[i];
       if (c.r == r && c.g == g && c.b == b)

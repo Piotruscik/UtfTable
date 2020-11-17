@@ -163,7 +163,7 @@ void example9() {
     "╠════════╬════════╬════════╬════════╣",
     "║        ║        ║        ║        ║",
     "╚════════╩════════╩════════╩════════╝");
-  char colors [7]{
+  unsigned char colors [2]{
     tbl->clGreen,
     tbl->clBlue,
   };
@@ -187,7 +187,7 @@ void example10() {
     "╠════════╬════════╬════════╬════════╣",
     "║        ║        ║        ║        ║",
     "╚════════╩════════╩════════╩════════╝");
-  char colors [7]{
+  unsigned char colors [7]{
     tbl->clGreen,
     tbl->clRed,
     tbl->clYellow,
@@ -220,7 +220,7 @@ void example11() {
     "╠════════╬════════╬════════╬════════╣",
     "║        ║        ║        ║        ║",
     "╚════════╩════════╩════════╩════════╝");
-  char colors [37];
+  unsigned char colors [37];
   for (int i = 0; i < 37; i++) {
     colors[i] = tbl->rgb(255, i * 7, 0);
   }
@@ -253,7 +253,7 @@ void example12() {
     "                     ",
     "                     ",
     "                     ");
-  char colors[8] = {
+  unsigned char colors[8] = {
     tbl->rgb(85,  0,   0),
     tbl->rgb(170, 128, 0),
     tbl->rgb(255, 192, 0),
