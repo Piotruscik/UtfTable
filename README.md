@@ -6,7 +6,7 @@ A convenient tool to make pretty-formatted, colorful output in C++ console appli
  * Self-contained, no additional dependencies.
  * Easy to integrate - just include `utftable.h` and that's all.
  * Supports utf-8 characters, up to 4 bytes.
- * 12 examlpes showing all features included in `main.cpp`
+ * 12 examples showing all features included in `main.cpp`
 
 ![screenshot](/Screenshot.png)
 
@@ -107,10 +107,10 @@ Sets value background color (see **example 8**). `colId` works same as in `val()
 
 
 ```
-UtfTable* setTopColors   (const char* c, const char* colors)
-UtfTable* setDownColors  (const char* c, const char* colors)
-UtfTable* setLineColors  (const char* c, const char* colors)
-UtfTable* setSepColors   (const char* c, const char* colors)
+UtfTable* setTopColors   (const char* c, const unsigned char* colors)
+UtfTable* setDownColors  (const char* c, const unsigned char* colors)
+UtfTable* setLineColors  (const char* c, const unsigned char* colors)
+UtfTable* setSepColors   (const char* c, const unsigned char* colors)
 ```
 Sets up to 10 colors for given part of the table. (see **examples 10 and 11**).\
 `setLineColor()` and `setSepColor()` only affect new lines, not already existing ones.\
@@ -118,16 +118,16 @@ Length of `c` argument should be equal to line length and characters 0-9 are ind
 
 
 ```
-UtfTable* setTopBgColors (const char* c, const char* colors)
-UtfTable* setDownBgColors(const char* c, const char* colors)
-UtfTable* setLineBgColors(const char* c, const char* colors)
-UtfTable* setSepBgColors (const char* c, const char* colors)
+UtfTable* setTopBgColors (const char* c, const unsigned char* colors)
+UtfTable* setDownBgColors(const char* c, const unsigned char* colors)
+UtfTable* setLineBgColors(const char* c, const unsigned char* colors)
+UtfTable* setSepBgColors (const char* c, const unsigned char* colors)
 ```
 Same as above, but set background colors (see **examples 9, 10 and 12**).
 
 
 ```
-char rgb(unsigned char r, unsigned char g, unsigned char b)
+unsigned char rgb(unsigned char r, unsigned char g, unsigned char b)
 ```
 Takes rgb values and returns table's internal index of the color. (see **examples 11 and 12**).\
 Needs terminal support of color sequences like `\x1B[38;2;r;g;bm`.\
