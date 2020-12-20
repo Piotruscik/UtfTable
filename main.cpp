@@ -163,16 +163,10 @@ void example9() {
     "╠════════╬════════╬════════╬════════╣",
     "║        ║        ║        ║        ║",
     "╚════════╩════════╩════════╩════════╝");
-  unsigned char colors [2]{
-    tbl->clGreen,
-    tbl->clBlue,
-  };
-  const char* odd  = "0000000000000000000000000000000000000";
-  const char* even = "1111111111111111111111111111111111111";
   tbl->val("Left")->val("Right")->val("Center")->val(3, -1, 3, "Point");
   tbl->newSep();
   for (int i = 0; i < 8; i++) {
-    tbl->setLineBgColors(i % 2 == 0 ? odd : even, colors);
+    tbl->setLineBgColor(i % 2 == 0 ? tbl->clGreen : tbl->clBlue);
     tbl->valf("%d,1", i)->valf("%d,2", i)->valf("%d,3", i)->valf("%d,4", i);
   }
   tbl->render();

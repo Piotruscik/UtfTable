@@ -2,7 +2,7 @@ UtfTable
 ===============
 
 A convenient tool to make pretty-formatted, colorful output in C++ console applications.
- * Light-weight - one .h file, less than 12 kB / 400 lines.
+ * Light-weight - one .h file, less than 13 kB / 500 lines.
  * Self-contained, no additional dependencies.
  * Easy to integrate - just include `utftable.h` and that's all.
  * Supports utf-8 characters, up to 4 bytes.
@@ -107,6 +107,24 @@ Sets value background color (see **example 8**). `colId` works same as in `val()
 
 
 ```
+UtfTable* setTopColor   (const unsigned char color)
+UtfTable* setDownColor  (const unsigned char color)
+UtfTable* setLineColor  (const unsigned char color)
+UtfTable* setSepColor   (const unsigned char color)
+```
+Sets color for given part of the table.\
+`setLineColor()` and `setSepColor()` only affect new lines, not already existing ones.\
+
+
+```
+UtfTable* setTopBgColor (const unsigned char color)
+UtfTable* setDownBgColor(const unsigned char color)
+UtfTable* setLineBgColor(const unsigned char color)
+UtfTable* setSepBgColor (const unsigned char color)
+```
+Same as above, but set background colors (see **example 9**).
+
+```
 UtfTable* setTopColors   (const char* c, const unsigned char* colors)
 UtfTable* setDownColors  (const char* c, const unsigned char* colors)
 UtfTable* setLineColors  (const char* c, const unsigned char* colors)
@@ -123,7 +141,7 @@ UtfTable* setDownBgColors(const char* c, const unsigned char* colors)
 UtfTable* setLineBgColors(const char* c, const unsigned char* colors)
 UtfTable* setSepBgColors (const char* c, const unsigned char* colors)
 ```
-Same as above, but set background colors (see **examples 9, 10 and 12**).
+Same as above, but set background colors (see **examples 10 and 12**).
 
 
 ```

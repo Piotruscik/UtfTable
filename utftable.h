@@ -149,6 +149,12 @@ class UtfTable {
     return this;
   }
 
+  UtfTable* setColor(__Line dst, const unsigned char color, char bg) {
+    for (int i = 0; i < lineLen; i++)
+      dst[i][4 + bg] = color;
+    return this;
+  }
+
   UtfTable* setColors(__Line dst, const char* chars, const unsigned char* colors, char bg) {
     int len = strlen(chars);
     for (int i = 0; i < len; i++)
@@ -358,6 +364,15 @@ class UtfTable {
   UtfTable* bgColor(unsigned char color) {
     return this->bgColor(this->currCol, color);
   }
+
+  UtfTable* setTopColor   (const unsigned char color) { return this->setColor(this->top,  color, 0); }
+  UtfTable* setLineColor  (const unsigned char color) { return this->setColor(this->none, color, 0); }
+  UtfTable* setSepColor   (const unsigned char color) { return this->setColor(this->sep,  color, 0); }
+  UtfTable* setDownColor  (const unsigned char color) { return this->setColor(this->down, color, 0); }
+  UtfTable* setTopBgColor (const unsigned char color) { return this->setColor(this->top,  color, 1); }
+  UtfTable* setLineBgColor(const unsigned char color) { return this->setColor(this->none, color, 1); }
+  UtfTable* setSepBgColor (const unsigned char color) { return this->setColor(this->sep,  color, 1); }
+  UtfTable* setDownBgColor(const unsigned char color) { return this->setColor(this->down, color, 1); }
 
   UtfTable* setTopColors   (const char* c, const unsigned char* colors) { return this->setColors(this->top,  c, colors, 0); }
   UtfTable* setLineColors  (const char* c, const unsigned char* colors) { return this->setColors(this->none, c, colors, 0); }
