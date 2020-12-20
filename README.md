@@ -113,7 +113,7 @@ UtfTable* setLineColor  (const unsigned char color)
 UtfTable* setSepColor   (const unsigned char color)
 ```
 Sets color for given part of the table.\
-`setLineColor()` and `setSepColor()` only affect new lines, not already existing ones.\
+`setLineColor()` and `setSepColor()` only affect new lines, not already existing ones.
 
 
 ```
